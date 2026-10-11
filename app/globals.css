@@ -1,0 +1,123 @@
+/* Global design tokens: keep the research interface neutral and readable. */
+:root {
+  --navy: #16243a;
+  --muted: #657287;
+  --border: #dfe5ed;
+  --accent: #283f61;
+  --background: #f9fbfd;
+  --white: #fff;
+}
+
+/* Normalize layout measurements for predictable responsive behavior. */
+*, *::before, *::after { box-sizing: border-box; }
+html { font-size: 16px; }
+body {
+  margin: 0;
+  color: var(--navy);
+  background: var(--background);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+
+/* Page frame and common header. */
+.site-shell { max-width: 1280px; margin: 0 auto; min-height: 100vh; padding: 28px 48px 24px; display: flex; flex-direction: column; }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand-lockup { display: flex; align-items: center; gap: 12px; font-size: .96rem; font-weight: 700; letter-spacing: -.3px; }
+.brand-mark { display: grid; place-items: center; color: white; width: 36px; height: 36px; border-radius: 11px; background: #263e60; }
+.brand-mark svg { width: 22px; height: 22px; }
+.research-label, .small-tag { font-size: .68rem; letter-spacing: .16em; font-weight: 800; color: #67788e; }
+
+/* Local preview indicator is deliberately absent for real participants. */
+.demo-banner { display: flex; align-items: center; gap: 8px; width: fit-content; border: 1px solid #d8e4ec; background: #eff6fa; color: #506c7d; font-size: .78rem; padding: 8px 13px; margin-top: 22px; border-radius: 999px; }
+.demo-dot { width: 7px; height: 7px; border-radius: 50%; background: #7895a7; }
+
+/* Main layout: prose on the left and a non-interactive sample UI on the right. */
+.hero { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(350px, .98fr); gap: clamp(28px, 5vw, 90px); align-items: center; flex: 1; padding: 70px 0 55px; }
+.hero-copy { max-width: 615px; }
+.eyebrow { display: flex; align-items: center; gap: 12px; font-size: .72rem; font-weight: 800; color: #66788f; letter-spacing: .18em; margin-bottom: 28px; }
+.eyebrow-line { display: inline-block; width: 28px; height: 2px; background: #8195ad; }
+h1 { letter-spacing: -.055em; }
+.hero-copy h1 { margin: 0 0 24px; font-size: clamp(2.55rem, 4.4vw, 4.45rem); line-height: 1.12; font-weight: 760; }
+.hero-copy h1 span { color: #55708e; }
+.intro-text { font-size: 1.06rem; color: #43556e; line-height: 1.85; margin: 0 0 16px; max-width: 535px; }
+.support-text { font-size: .94rem; color: #68788a; line-height: 1.8; margin: 0; max-width: 525px; }
+
+/* Study facts communicate scope without mentioning any experimental hypotheses. */
+.facts { display: flex; flex-wrap: wrap; gap: 17px 25px; padding-top: 33px; padding-bottom: 30px; }
+.fact { display: flex; gap: 12px; align-items: center; }
+.fact-icon { width: 44px; height: 44px; border: 1px solid #e0e7ef; border-radius: 12px; background: #fff; display: grid; place-items: center; font-size: 1.4rem; color: #3f5575; }
+.fact span:last-child { display: flex; flex-direction: column; gap: 4px; }
+.fact strong { font-size: .83rem; }
+.fact small { font-size: .73rem; color: #7e8b9b; }
+
+/* The primary CTA moves forward to the consent screen. */
+.start-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 58px; padding: 18px 22px; min-width: 265px; border-radius: 11px; background: #263d5f; color: white; text-decoration: none; font-size: .89rem; font-weight: 700; box-shadow: 0 14px 28px #20345426; transition: background .16s ease, transform .16s ease; }
+.start-link:hover { background: #192e4e; transform: translateY(-1px); }
+.start-link:focus-visible, .text-link:focus-visible { outline: 3px solid #688bac; outline-offset: 4px; }
+.start-link span { font-size: 1.35rem; font-weight: 400; }
+.privacy-note { max-width: 415px; margin: 20px 0 0; color: #7d8998; font-size: .77rem; line-height: 1.8; }
+
+/* Example interface preview: illustrative only, not a real trial. */
+.visual-column { position: relative; display: flex; justify-content: center; padding: 40px 0; min-width: 0; }
+.visual-glow { position: absolute; inset: 5% 0; border-radius: 50%; background: radial-gradient(ellipse, #dae4ee 0%, #eaf0f5 37%, transparent 72%); filter: blur(8px); }
+.preview-card { position: relative; width: min(100%, 465px); border: 1px solid #e0e5eb; border-radius: 18px; background: #fff; overflow: hidden; box-shadow: 0 28px 80px #21395318, 0 8px 22px #2139530d; transform: rotate(1.2deg); }
+.preview-topbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 17px 20px; border-bottom: 1px solid #ebeff4; color: #8d9bab; letter-spacing: .12em; font-size: .62rem; font-weight: 800; }
+.preview-dots { display: flex; align-items: center; gap: 5px; }
+.preview-dots i { width: 7px; height: 7px; background: #d4dfe7; border-radius: 50%; }
+.preview-step { color: #8494a5; font-size: .65rem; letter-spacing: .03em; }
+.preview-body { padding: 25px 27px 21px; }
+.preview-label-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+.preview-label-row strong { font-size: .96rem; }
+.preview-label-row span { font-size: .67rem; color: #9aa6b2; }
+.sample-image { width: 100%; overflow: hidden; border-radius: 12px; border: 1px solid #dfe6ed; background: #e9eff4; }
+.sample-image svg { display: block; width: 100%; height: auto; }
+.preview-question { display: block; font-size: .79rem; color: #475b73; font-weight: 650; margin: 20px 0 11px; }
+.preview-options { display: flex; gap: 12px; }
+.preview-options span { flex: 1; display: grid; place-items: center; padding: 13px 8px; border: 1px solid #e0e7ef; border-radius: 8px; color: #62738a; font-size: .73rem; }
+.preview-caption { text-align: center; color: #a5aeb8; font-size: .64rem; margin-top: 17px; }
+.floating-tag { position: absolute; bottom: 30px; left: -17px; display: flex; align-items: center; gap: 8px; font-size: .7rem; background: white; border: 1px solid #e1e8ee; box-shadow: 0 12px 30px #1c345315; border-radius: 999px; padding: 12px 15px; font-weight: 700; transform: rotate(-2deg); }
+.floating-pulse { width: 8px; height: 8px; background: #8b9dad; border-radius: 50%; }
+.footer { border-top: 1px solid #e8ecf2; padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: .71rem; color: #99a5b3; }
+
+/* Invalid or missing Prolific IDs show an informative, non-interactive state. */
+.access-wrapper { min-height: 100vh; display: grid; place-items: center; padding: 22px; }
+.access-card { max-width: 490px; background: white; border: 1px solid #dfe6ef; border-radius: 20px; padding: 36px; box-shadow: 0 24px 56px #1c345312; }
+.access-card h1 { font-size: 1.8rem; line-height: 1.25; margin: 14px 0 16px; }
+.access-card p { color: #56687e; line-height: 1.75; }
+.access-help { font-size: .85rem; color: #8190a0 !important; }
+.access-icon { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid #cfd9e4; color: #61748b; border-radius: 50%; font-size: 1.5rem; }
+.consent-placeholder .small-tag { display: block; }
+.text-link { color: #263d5f; text-decoration: underline; text-underline-offset: 4px; font-weight: 650; }
+
+/* Responsive: stack content and preview on smaller displays. */
+@media (max-width: 900px) {
+  .site-shell { padding: 22px 26px; }
+  .hero { grid-template-columns: 1fr; padding: 72px 0 35px; gap: 18px; }
+  .hero-copy { max-width: 730px; }
+  .visual-column { padding: 30px 0 55px; }
+  .floating-tag { left: max(0px, calc(50% - 238px)); }
+}
+@media (max-width: 580px) {
+  .site-shell { padding: 18px 20px; }
+  .brand-lockup { font-size: .78rem; gap: 8px; }
+  .brand-mark { width: 32px; height: 32px; }
+  .research-label { font-size: .58rem; letter-spacing: .08em; }
+  .hero { padding: 55px 0 18px; }
+  .hero-copy h1 { font-size: 2.6rem; }
+  .eyebrow { font-size: .64rem; margin-bottom: 20px; }
+  .intro-text { font-size: .97rem; }
+  .facts { gap: 15px; padding: 25px 0; }
+  .start-link { width: 100%; }
+  .visual-column { padding: 25px 8px 48px; }
+  .floating-tag { left: 0; bottom: 30px; }
+  .preview-body { padding: 20px 18px; }
+  .footer { padding-bottom: 12px; }
+  .access-card { padding: 26px; }
+}
+
+/* Reduce animation for participants who request reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .start-link { transition: none; }
+  .start-link:hover { transform: none; }
+}
