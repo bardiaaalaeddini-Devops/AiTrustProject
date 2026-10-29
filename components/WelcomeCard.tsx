@@ -33,13 +33,6 @@ export function WelcomeCard({ consentHref, isDemo }: WelcomeCardProps) {
         <span className="research-label">RESEARCH STUDY</span>
       </header>
 
-      {isDemo && (
-        <div className="demo-banner" role="status">
-          <span className="demo-dot" aria-hidden="true" />
-          Development preview — no Prolific participant is connected.
-        </div>
-      )}
-
       <section className="hero" aria-labelledby="welcome-title">
         <div className="hero-copy">
           <div className="eyebrow"><span className="eyebrow-line" /> HUMAN + AI DECISION-MAKING</div>
@@ -56,7 +49,7 @@ export function WelcomeCard({ consentHref, isDemo }: WelcomeCardProps) {
           <div className="facts" aria-label="Study overview">
             <div className="fact">
               <span className="fact-icon" aria-hidden="true">▦</span>
-              <span><strong>12 inspection rounds</strong><small>After a short practice</small></span>
+              <span><strong>3 sets of 12 inspections</strong><small>36 decisions in total</small></span>
             </div>
             <div className="fact">
               <span className="fact-icon" aria-hidden="true">◎</span>

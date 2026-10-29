@@ -46,4 +46,6 @@ npm run build
 - `tests/prolific.test.mjs`: parsing/navigation unit tests.
 
 ## Next milestone
+The development-only `/questionnaire` route provides three sets of twelve illustrative anomaly-inspection samples, decision and confidence controls, per-set answer review, and a JSON download. Open it with `npm run dev`, either directly or from the consent placeholder. Answers remain in React memory and are cleared on refresh. The route returns 404 in production until consent, real stimuli, and response storage are implemented. Illustrations are synthetic interface fixtures, not validated study stimuli; no AI predictions or accuracy scores are provided.
+
 Create the real informed-consent screen, clarify consent text with the research team, and implement safe handling of Prolific identifiers after consent.

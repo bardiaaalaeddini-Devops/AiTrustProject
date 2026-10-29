@@ -39,6 +39,7 @@ export default async function ConsentPlaceholder({ searchParams }: ConsentPagePr
           No consent has been recorded. No participant answers have been collected.
         </p>
         <Link className="text-link" href="/">Back to welcome (local preview)</Link>
+        {process.env.NODE_ENV === "development" && <p><Link className="text-link" href="/questionnaire">Open questionnaire development preview →</Link></p>}
       </section>
     </main>
   );
