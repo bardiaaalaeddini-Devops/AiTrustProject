@@ -15,3 +15,12 @@ out/
 # Local experimental data must never be committed
 local-data/
 responses/
+
+# Server research data
+/storage/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# Local PostgreSQL binaries and data
+.local/

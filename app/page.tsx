@@ -20,7 +20,7 @@ interface PageProps {
  */
 export default async function HomePage({ searchParams }: PageProps) {
   const query = await searchParams;
-  const launch = parseStudyLaunch(query, process.env.NODE_ENV === "development");
+  const launch = parseStudyLaunch(query, (process.env.NODE_ENV === "development" || process.env.STUDY_ALLOW_DEMO === "true"));
 
   if (!launch) {
     return (

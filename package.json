@@ -7,15 +7,23 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "test": "node --experimental-strip-types --test tests/*.test.mjs"
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "db:migrate": "node scripts/db-migrate.mjs",
+    "db:import-sqlite": "node scripts/import-sqlite.mjs",
+    "db:start": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/postgres-local.ps1 start",
+    "db:stop": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/postgres-local.ps1 stop",
+    "db:status": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/postgres-local.ps1 status"
   },
   "dependencies": {
-    "next": "^15.5.0",
+    "dotenv": "^18.0.9",
+    "next": "^15.5.28",
+    "pg": "^8.23.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",
     "typescript": "^5.9.0"

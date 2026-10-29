@@ -160,3 +160,42 @@ button:focus-visible, input:focus-visible { outline: 3px solid #688bac; outline-
   .start-link { transition: none; }
   .start-link:hover { transform: none; }
 }
+
+
+/* Trial controls use equal weights and neutral styling to limit framing effects. */
+.study-shell { max-width: 1200px; margin: auto; padding: 28px; }
+.prototype-banner { border: 1px solid var(--border); padding: 14px; font-size: .85rem; line-height: 1.6; }
+.study-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin-top: 24px; }
+.study-card h1 { font-size: 2rem; letter-spacing: -.03em; }
+.study-card h2 { font-size: 1.2rem; }
+.study-card p { line-height: 1.75; }
+.study-card button, .study-card select { font: inherit; border: 1px solid #7c899a; border-radius: 6px; padding: 12px 16px; background: white; color: var(--navy); cursor: pointer; }
+.study-card button.primary { background: var(--navy); color: white; }
+.study-card button:disabled { opacity: .45; cursor: not-allowed; }
+.study-card button[aria-pressed="true"] { outline: 2px solid var(--navy); background: #e9edf2; }
+.study-card :focus-visible { outline: 3px solid #6e86a0; outline-offset: 4px; }
+.study-card select { display: block; margin: 12px 0; }
+.actions, .decision-options { display: flex; flex-wrap: wrap; gap: 14px; margin: 20px 0; }
+.decision-options button { flex: 1; }
+.confidence { margin: 24px 0; }
+.confidence label { display: block; }
+.confidence input { width: 100%; margin: 22px 0 12px; accent-color: #46576d; }
+.range-labels { display: flex; justify-content: space-between; gap: 20px; font-size: .8rem; margin-bottom: 16px; }
+.trial-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: start; }
+.stimulus { margin: 0; position: sticky; top: 24px; }
+.study-card img { display: block; width: 100%; height: auto; }
+.study-card figcaption { font-size: .8rem; line-height: 1.7; padding: 10px 0; }
+.ai-panel { border: 1px solid var(--border); padding: 18px; margin-bottom: 24px; }
+.ai-panel figure { margin: 0; }
+.study-card fieldset { margin: 24px 0; padding: 20px; border: 1px solid var(--border); }
+.radio-option { display: block; padding: 12px 0; }
+.radio-option input { margin-right: 10px; }
+@media (max-width: 800px) { .trial-layout { grid-template-columns: 1fr; } .stimulus { position: static; } .study-card { padding: 20px; } .study-shell { padding: 16px; } }
+
+/* Explicit five-point confidence ratings, with no preselected response. */
+.study-card .confidence-rating { padding: 16px 0; border: 0; }
+.confidence-rating legend { font-weight: 600; }
+.confidence-rating p { font-size: .88rem; color: var(--muted); margin: 8px 0 16px; }
+ .confidence-rating input[type="range"] { display: block; width: 100%; margin: 18px 0 4px; cursor: pointer; }
+.confidence-rating-ticks { display: flex; justify-content: space-between; padding: 0 6px; font-weight: 600; }
+.confidence-rating input[type="range"]:focus-visible { outline: 3px solid #6e86a0; outline-offset: 4px; }

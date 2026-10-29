@@ -1,10 +1,11 @@
-import { notFound } from "next/navigation";
-import { Questionnaire } from "../../components/Questionnaire";
+import ConsentPage from "../consent/page";
+import type { StudyQuery } from "../../lib/prolific";
 
 export const dynamic = "force-dynamic";
 
-export default function QuestionnairePage() {
-  // Participant collection awaits the informed-consent and backend milestones.
-  if (process.env.NODE_ENV !== "development") notFound();
-  return <Questionnaire />;
+export default async function QuestionnairePage({ searchParams }: { searchParams: Promise<StudyQuery> }) {
+  const query = await searchParams;
+  const launch = process.env.NODE_ENV === "development" && Object.keys(query).length === 0
+    ? { demo: "1" } : query;
+  return <ConsentPage searchParams={Promise.resolve(launch)} />;
 }
